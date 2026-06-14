@@ -1,0 +1,46 @@
+{
+  "name": "bytemsg233",
+  "displayName": "ByteMsg233 Language Support",
+  "description": "VS Code language support for ByteMsg233 (.bmsg) schema files",
+  "version": "0.1.0",
+  "publisher": "neko233",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neko233/bytemsg233-vscode-plugin"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "bytemsg233",
+    "bmsg",
+    "schema",
+    "serialization"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "bmsg",
+        "aliases": [
+          "ByteMsg233",
+          "bmsg"
+        ],
+        "extensions": [
+          ".bmsg"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bmsg",
+        "scopeName": "source.bmsg",
+        "path": "./syntaxes/bmsg.tmLanguage.json"
+      }
+    ]
+  }
+}
