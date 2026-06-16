@@ -1,13 +1,36 @@
-# ByteMsg233 Language Support
+# ByteMsg233 Legacy Language Support
 
-VS Code 语言支持插件，为 [ByteMsg233](https://github.com/neko233/bytemsg233) 的 `.bmsg` Schema 文件提供语法高亮和编辑支持。
+VS Code language support for legacy ByteMsg233 `.bmsg` schema files.
 
-## 功能特性
+New ByteMsg233 projects should use `.bmsg.json`. JSON is the default DSL because message-heavy protocols stay easier to scan when top-level keys are message names. YAML remains supported, and this plugin remains useful for older `.bmsg` files and custom editor tooling experiments.
 
-- 语法高亮：关键字、类型、注释、字符串、数字等
-- 括号匹配与自动闭合：`{}`、`[]`、`()`、`<>`
-- i18n 注释高亮：`// "中文" | "English"` 双语注释分别着色
-- 自定义文件图标
+## Features
+
+- Syntax highlighting for legacy `.bmsg` files
+- Bracket matching and auto closing for `{}`, `[]`, `()`, `<>`
+- i18n inline comment highlighting for `// "中文" | "English"`
+- Custom file icon
+
+## Recommended Schema Format
+
+Use JSON for new files:
+
+```json
+{
+  "schema": "bymsg/v1",
+  "package": "com.example.model",
+  "User": {
+    "id": { "type": "uint64", "tag": 1 },
+    "name": { "type": "string", "tag": 2 }
+  }
+}
+```
+
+Compile it with:
+
+```bash
+bytemsg233 compile user.bmsg.json -l typescript,csharp,go -o ./gen
+```
 
 ## 支持的关键字
 
@@ -17,15 +40,12 @@ VS Code 语言支持插件，为 [ByteMsg233](https://github.com/neko233/bytemsg
 | 基础类型 | `uint32`, `uint64`, `int32`, `int64`, `float32`, `float64`, `string`, `bool`, `bytes` |
 | 泛型 | `list<T>`, `map<K, V>` |
 
-## 文件示例
+## Legacy File Example
 
 ```bmsg
-// "用户协议" | "User Protocol"
-schema UserProtocol
-
+schema: bymsg/v1
 package com.example.model
 
-// "用户状态" | "User Status"
 enum UserStatus {
     ACTIVE = 0
     INACTIVE = 1

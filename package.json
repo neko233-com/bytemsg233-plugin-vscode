@@ -1,8 +1,8 @@
 {
   "name": "bytemsg233",
   "displayName": "ByteMsg233 Language Support",
-  "description": "VS Code language support for ByteMsg233 (.bmsg) schema files",
-  "version": "0.1.0",
+  "description": "VS Code language support for legacy ByteMsg233 (.bmsg) schema files; new projects use .bmsg.json.",
+  "version": "1.0.0",
   "publisher": "neko233",
   "license": "MIT",
   "repository": {
