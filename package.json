@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neko233/bytemsg233-vscode-plugin"
+    "url": "https://github.com/neko233-com/bytemsg233-plugin-vscode"
   },
   "engines": {
     "vscode": "^1.74.0"
